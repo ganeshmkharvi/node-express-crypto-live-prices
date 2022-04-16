@@ -3,7 +3,7 @@ const path = require('path');
 const os = require('os');
 const express = require('express');
 const socketio = require('socket.io');
-import { fetchPrices } from "../prices/fetchprices";
+import { fetchTickerPrices } from "../service/tradePairPrices";
 
 const app = express();
 const server = http.createServer(app);
@@ -27,7 +27,7 @@ const io = require('socket.io')(server, {
 io.on("connection", function (socket: any) {
     console.log('Client connected');
     setInterval( async () => {
-                socket.emit('subscribed-crypto-prices', await fetchPrices());
+                socket.emit('subscribed-crypto-prices', await fetchTickerPrices());
         	}, 5000);
 });
 
