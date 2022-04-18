@@ -1,14 +1,12 @@
-const http = require('http');
-const path = require('path');
-const os = require('os');
-const express = require('express');
-const socketio = require('socket.io');
+import http from 'http';
+import path from 'path';
+import express from 'express';
 import { fetchTickerPrices } from "../service/tradePairPrices";
+import config from '../config/config';
 
 const app = express();
 const server = http.createServer(app);
-//const io = socketio(server);
-const PORT = process.env.PORT || 3001;
+const PORT = config.port || 3001;
 
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
@@ -24,11 +22,12 @@ const io = require('socket.io')(server, {
     }, allowEIO3: true
 });
 
-io.on("connection", function (socket: any) {
+io.on("connection", async function (socket: any) {
     console.log('Client connected');
+    socket.emit('subscribed-crypto-prices', await fetchTickerPrices());
     setInterval( async () => {
                 socket.emit('subscribed-crypto-prices', await fetchTickerPrices());
-        	}, 5000);
+        	}, Number(config.interval));
 });
 
 server.listen(PORT, () => console.log(`Cyrpto ticker server running on port ${PORT}`));
