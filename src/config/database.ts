@@ -3,7 +3,6 @@ import config from './config';
 import * as constants from "../utility/constants";
 
 export function connect() {
-    console.log(config.mongoDbUrl);
   // Connecting to the database
   mongoose
     .connect(config.mongoDbUrl)

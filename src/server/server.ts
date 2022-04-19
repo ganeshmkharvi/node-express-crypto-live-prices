@@ -1,15 +1,19 @@
+import * as dbConfig from '../config/database';
 import http from 'http';
 import path from 'path';
 import express from 'express';
 import { fetchTickerPrices } from "../service/tradePairPrices";
 import config from '../config/config';
+import { userRoute } from '../routes/detail';
+
+dbConfig.connect();
 
 const app = express();
+
 const server = http.createServer(app);
 const PORT = config.port || 3001;
-
-// Set static folder
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
+userRoute(app);
 
 app.get("/", (req, res, next) => {
     res.json(["Welcome to Crypto Live Prices"]);
