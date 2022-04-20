@@ -1,4 +1,4 @@
-import User from "../model/detail";
+import Detail from "../model/detail";
 import * as constants from "../utility/constants";
 
 export async function saveDetails(req, res) {
@@ -10,7 +10,7 @@ export async function saveDetails(req, res) {
             res.status(constants.statusCode400).send({ message: constants.inValidInput });
         }
 
-        const details = await User.create({
+        const details = await Detail.create({
             transactionDate,
             currencyFrom,
             amount1,
@@ -24,4 +24,15 @@ export async function saveDetails(req, res) {
         console.log(err);
         return res.status(constants.statusCode500).send(err);
     }
+}
+
+export async function fetchAllRecords (req, res)  {
+    await Detail.find({}).then(data => {
+        res.send(data);
+    })
+    .catch(err => {
+        res.status(constants.statusCode500).send({
+            message: err.message
+        });
+    });
 }

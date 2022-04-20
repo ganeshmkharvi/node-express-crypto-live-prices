@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "a0a4462a-26b0-4596-9b94-cdfa10f2ba20",
+		"name": "node-express-crypto-live-prices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Save Transaction Details",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"transactionDate\": \"2020-08-05T14:38:38.3413202Z\",\r\n  \"currencyFrom\": \"Bitcoin\",\r\n  \"amount1\": 11,\r\n  \"currency2\": \"USD\",\r\n  \"amount2\": 940923.43,\r\n  \"conversionType\": \"Exchanged\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/detail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"detail"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Transaction Details",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/detail",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"detail"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

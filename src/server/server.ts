@@ -1,10 +1,10 @@
 import * as dbConfig from '../config/database';
 import http from 'http';
-import path from 'path';
 import express from 'express';
 import { fetchTickerPrices } from "../service/tradePairPrices";
 import config from '../config/config';
 import { userRoute } from '../routes/detail';
+import * as constants from "../utility/constants";
 
 dbConfig.connect();
 
@@ -34,4 +34,4 @@ io.on("connection", async function (socket: any) {
         	}, Number(config.interval));
 });
 
-server.listen(PORT, () => console.log(`Cyrpto ticker server running on port ${PORT}`));
+server.listen(PORT, () => console.log(`Cyrpto ticker ${constants.serviceRunning} ${PORT}`));
