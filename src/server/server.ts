@@ -5,6 +5,7 @@ import { fetchTickerPrices } from "../service/tradePairPrices";
 import config from '../config/config';
 import { userRoute } from '../routes/detail';
 import * as constants from "../utility/constants";
+import { insertMany } from '../service/detail';
 
 dbConfig.connect();
 
@@ -17,7 +18,7 @@ userRoute(app);
 
 app.get("/", (req, res, next) => {
     res.json(["Welcome to Crypto Live Prices"]);
-   });
+});
 
 const io = require('socket.io')(server, {
     cors: {
@@ -28,10 +29,15 @@ const io = require('socket.io')(server, {
 
 io.on("connection", async function (socket: any) {
     console.log('Client connected');
-    socket.emit('subscribed-crypto-prices', await fetchTickerPrices());
-    setInterval( async () => {
-                socket.emit('subscribed-crypto-prices', await fetchTickerPrices());
-        	}, Number(config.interval));
+    const firstConnData = await fetchTickerPrices();
+    socket.emit('subscribed-crypto-prices', firstConnData);
+    await insertMany(firstConnData);
+
+    setInterval(async () => {
+        const intervalData = await fetchTickerPrices();
+        socket.emit('subscribed-crypto-prices', intervalData);
+        await insertMany(intervalData);
+    }, Number(config.interval));
 });
 
 server.listen(PORT, () => console.log(`Cyrpto ticker ${constants.serviceRunning} ${PORT}`));

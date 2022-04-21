@@ -15,4 +15,6 @@ interface tradePair {
     baseUrl: string;
     targetUrl: string;
     name: string;
+    transactionDate?: Date;
+    conversionType?: string
 }

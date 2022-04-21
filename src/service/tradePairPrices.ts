@@ -30,7 +30,7 @@ function formTradePairRequest(): tradePairRequest[] {
 
 function generateTickerPrices(pair: tradePairRequest): tradePairResponse {
     return {
-        name: pair.name,
+        name: pair.name, transactionDate: new Date(new Date().toUTCString()),
         base: pair.base, target: pair.target, price: random(pair.priceStart, pair.priceEnd).toFixed(pair.targetDecimalPlaces),
         baseDecimalPlaces: pair.baseDecimalPlaces, targetDecimalPlaces: pair.targetDecimalPlaces, baseUrl: pair.baseUrl, targetUrl: pair.targetUrl
     } as tradePairResponse;

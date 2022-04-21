@@ -10,10 +10,10 @@ const detailSchema = new mongoose.Schema({
 });
 
 detailSchema.method("toJSON", function () {
-    // eslint-disable-next-line
-    const { __v, _id, ...object } = this.toObject();
-    object.id = _id;
-    return object;
+  // eslint-disable-next-line
+  const { __v, _id, ...object } = this.toObject();
+  object.id = _id;
+  return object;
 });
 
 const detail = mongoose.model("Detail", detailSchema);
