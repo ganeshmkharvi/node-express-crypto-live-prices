@@ -20,7 +20,8 @@
 
 #### Task description
 
-On connecting with socket.io you will get crypto prices in the following format:
+On connecting with socket.io you will get crypto prices in the following format: 
+
  [{
     base: 'ADA', target: 'USD', priceStart: 0.29, priceEnd: 0.99, name: 'Cardano',
     baseUrl: 'basecurrencyUrlLink,
