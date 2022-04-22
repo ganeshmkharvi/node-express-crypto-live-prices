@@ -28,13 +28,13 @@ On connecting with socket.io you will get crypto prices in the following format:
     baseDecimalPlaces: 6, targetDecimalPlaces: 2, targetUrl: 'targetcurrencyUrlLink'
 }]
 
-Above is just one example for ADA to USD. Similarly you will get it for other currencies once you connect your client <a href="https://github.com/ganeshmkharvi/react-crypto-exchange-rates">react-crypto-exchange-rates</a>  to socket.io and after that on every interval that you set in this project. 
+Above is just one example for ADA to USD. Similarly you will get it for other currencies once you connect your client <a href="https://github.com/ganeshmkharvi/react-crypto-exchange-rates">react-crypto-exchange-rates</a>  to socket.io and after that on every interval that you set in this project. At the same time data will also get stored in the mongoDB. The same data will be displayed in <a href="https://www.figma.com/file/YMRGT8t3GlxDMH8cN7BTw9/Technical-Assessment?node-id=21%3A2715">Historical data</a> screen.
 
 The data you used can be found in <a href="https://www.figma.com/file/YMRGT8t3GlxDMH8cN7BTw9/Technical-Assessment?node-id=24%3A1295">Exchange screen</a> 
 
 On Save click you can call /api/detail (POST) for saving transaction. If you change the amount then you need to send conversionType as "Exchanged" else it will be "Live Price". 
 
-All the saved records can be shown in the grid <a href="https://www.figma.com/file/YMRGT8t3GlxDMH8cN7BTw9/Technical-Assessment?node-id=21%3A2715">Historical data</a>. Data for which will come from /api/detail (GET)
+All the saved records can be shown in the grid <a href="https://www.figma.com/file/YMRGT8t3GlxDMH8cN7BTw9/Technical-Assessment?node-id=21%3A2715">Historical data</a>. You will get the data from /api/detail (GET).
 
 You will get all the details in the postman collection inside this repo.
 
