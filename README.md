@@ -34,7 +34,7 @@ The data you used can be found in <a href="https://www.figma.com/file/YMRGT8t3Gl
 
 On Save click you can call /api/detail (POST) for saving transaction. If you change the amount then you need to send conversionType as "Exchanged" else it will be "Live Price". 
 
-All the saved records can be shown in the grid <a href="https://www.figma.com/file/YMRGT8t3GlxDMH8cN7BTw9/Technical-Assessment?node-id=21%3A2715">Historical data</a> Data for which will come from /api/detail (GET)
+All the saved records can be shown in the grid <a href="https://www.figma.com/file/YMRGT8t3GlxDMH8cN7BTw9/Technical-Assessment?node-id=21%3A2715">Historical data</a>. Data for which will come from /api/detail (GET)
 
 You will get all the details in the postman collection inside this repo.
 
