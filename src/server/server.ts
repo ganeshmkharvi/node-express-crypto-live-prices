@@ -16,10 +16,11 @@ const PORT = config.port || 3001;
 app.use(express.json());
 userRoute(app);
 
-app.get("/", (req, res, next) => {
+app.get("/", (req, res) => {
     res.json(["Welcome to Crypto Live Prices"]);
 });
 
+// eslint-disable-next-line 
 const io = require('socket.io')(server, {
     cors: {
         origin: "*", methods: ["GET", "POST", "DELETE"],
@@ -27,6 +28,7 @@ const io = require('socket.io')(server, {
     }, allowEIO3: true
 });
 
+// eslint-disable-next-line 
 io.on("connection", async function (socket: any) {
     console.log('Client connected');
     const firstConnData = await fetchTickerPrices();

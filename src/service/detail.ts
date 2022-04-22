@@ -32,7 +32,7 @@ export async function insertMany(data: tradePairResponse[]) {
 }
 
 const converttoDetail = (data: tradePairResponse[]) => {
-    let details= [];
+    const details= [];
     data.forEach(element => {
     details.push({transactionDate:element.transactionDate ,
         currencyFrom: element.name,

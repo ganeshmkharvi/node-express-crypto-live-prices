@@ -8,14 +8,14 @@ import { tradePairRequest, tradePairResponse } from "./interfaces";
 const random = (min, max) => Math.random() * (max - min) + min;
 
 export const fetchTickerPrices = async () => {
-    let data = await tradePairPrices();
+    const data = await tradePairPrices();
     return data;
 
 }
 
 const tradePairPrices = async () => {
-    let exchangePrices: tradePairRequest[] = formTradePairRequest();
-    let response: tradePairResponse[] = [];
+    const exchangePrices: tradePairRequest[] = formTradePairRequest();
+    const response: tradePairResponse[] = [];
 
     exchangePrices.forEach(element => {
         response.push(generateTickerPrices(element));
