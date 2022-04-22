@@ -27,10 +27,11 @@ On connecting with socket.io you will get crypto prices in the following format:
     baseDecimalPlaces: 6, targetDecimalPlaces: 2, targetUrl: 'targetcurrencyUrlLink'
 }]
 
-Above is just one examplefor ADA to USD. Similarly you will get it for other currencies once you connect your client (https://github.com/ganeshmkharvi/react-crypto-exchange-rates) to socket.io and after that on every interval that you set in this project. <br/>
-The data can you used for the screen found in https://www.figma.com/file/YMRGT8t3GlxDMH8cN7BTw9/Technical-Assessment?node-id=24%3A1295 <br/>
+Above is just one examplefor ADA to USD. Similarly you will get it for other currencies once you connect your client (https://github.com/ganeshmkharvi/react-crypto-exchange-rates) to socket.io and after that on every interval that you set in this project. 
 
-On Save click you can call /api/detail (POST) for saving transaction. If you change the amount then you need to send conversionType as "Exchanged" else it will be "Live Price". <br/>
+The data can you used for the screen found in https://www.figma.com/file/YMRGT8t3GlxDMH8cN7BTw9/Technical-Assessment?node-id=24%3A1295 
+
+On Save click you can call /api/detail (POST) for saving transaction. If you change the amount then you need to send conversionType as "Exchanged" else it will be "Live Price". 
 
 All the saved records can be shown in the grid (https://www.figma.com/file/YMRGT8t3GlxDMH8cN7BTw9/Technical-Assessment?node-id=21%3A2715). Data for which will come from /api/detail (GET)
 
