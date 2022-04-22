@@ -16,6 +16,7 @@
 - Production standard structuring of the application.
 - High SoC (feature based).
 - Postman collection.
+- Socket.io for real time updates.
 
 
 ### Built With
@@ -23,7 +24,7 @@
 - [Node.js]() - JavaScript runtime built on Chrome's V8 JavaScript engine.
 - [Express.js]() - Minimal and flexible Node.js web application framework.
 - [MongoDB]() - Cross-platform document-oriented database program.
-- [Socket.io] - Event driven JavaScript library for real time web applications.
+- [Socket.io]() - Event driven JavaScript library for real time web applications.
 
 <!-- GETTING STARTED -->
 
