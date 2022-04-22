@@ -67,7 +67,7 @@ To run this project, you'll need to have the following installed:
    INTERVAL = <INTERVAL>
    ```
    E.g. MONGO_DB_URL = mongodb://localhost:27017/cryptodb
-   Here, cryptodb is the database name.
+   Here, cryptodb is the database name. <br/>
    INTERVAL = 240000
    Here, INTERVAL can be set to any value in milliseconds. I have set it to 240000 which is 4 minutes. So data will be emitted after every 4 minutes.
 
