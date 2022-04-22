@@ -1,5 +1,5 @@
 <p align="center">
-  <h3 align="center">Mock Live Crypto Prices</h3>
+  <h3 align="center">Real time Mock crypto prices</h3>
   <p align="center">
     <a href="https://github.com/ganeshmkharvi/node-express-crypto-live-prices/issues">Report Bug </a>
     ·
