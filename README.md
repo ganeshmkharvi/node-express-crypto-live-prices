@@ -28,7 +28,7 @@ On connecting with socket.io you will get crypto prices in the following format:
     baseDecimalPlaces: 6, targetDecimalPlaces: 2, targetUrl: 'targetcurrencyUrlLink'
 }]
 
-Above is just one examplefor ADA to USD. Similarly you will get it for other currencies once you connect your client <a href="https://github.com/ganeshmkharvi/react-crypto-exchange-rates">react-crypto-exchange-rates</a>  to socket.io and after that on every interval that you set in this project. 
+Above is just one example for ADA to USD. Similarly you will get it for other currencies once you connect your client <a href="https://github.com/ganeshmkharvi/react-crypto-exchange-rates">react-crypto-exchange-rates</a>  to socket.io and after that on every interval that you set in this project. 
 
 The data you used can be found in <a href="https://www.figma.com/file/YMRGT8t3GlxDMH8cN7BTw9/Technical-Assessment?node-id=24%3A1295">Exchange screen</a> 
 
