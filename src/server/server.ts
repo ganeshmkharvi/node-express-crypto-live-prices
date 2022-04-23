@@ -6,10 +6,12 @@ import config from '../config/config';
 import { userRoute } from '../routes/detail';
 import * as constants from "../utility/constants";
 import { insertMany } from '../service/detail';
+import cors from "cors";
 
 dbConfig.connect();
 
 const app = express();
+app.use(cors());
 
 const server = http.createServer(app);
 const PORT = config.port || 3001;
