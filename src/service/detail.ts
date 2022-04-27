@@ -8,7 +8,7 @@ export async function saveDetails(req, res) {
 
         // Validate user input
         if (!(transactionDate && currencyFrom && amount1 && currency2 && amount2 && conversionType)) {
-            res.status(constants.statusCode400).send({ message: constants.inValidInput });
+            return res.status(constants.statusCode400).send({ message: constants.inValidInput });
         }
 
         const details = await Detail.create({
