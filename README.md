@@ -12,7 +12,7 @@
 ### What's inside this repo?
 
 - Express Server configured to accept JSON request.
-- Apis to create services, checkouts and retrieve services.
+- Apis to get and save transaction details.
 - Production standard structuring of the application.
 - High SoC (feature based).
 - Postman collection.
